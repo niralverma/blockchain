@@ -9,8 +9,36 @@ Blockchain development is a very complex and resource consuming task. It involve
 What is the difference between a stable version and a nightly version? (RUST)
 Stable is intended for regular users. It is not the "newest" version, but it is thoroughly tested. Nightly is basically the opposite, you're getting the latest versions being built, but they are untested and prone to bugs and crashes. I would only use a Nightly build if it fixes a specific problem for whatever specific game you're running.
 
+Substrate and its basics
+💻 Environment Setup
+
+For Windows
+You need to install Linux Subsystem for Windows as this development needs Linux kernel. 
+
+For this course, I will go with WSL.
+Start by running your Windows terminal in administrator mode
+ 
+In your CMD or Powershell run the following command
+
+[wsl --install]
+[sudo apt update]
+[sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler]
+[curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh]
+Now update your current shell with cargo environment by running the following command 👇🏼
+[source ~/.cargo/env]
+[rustc --version]
+[rustup default stable]
+[rustup update]
+[rustup update nightly]
+[rustup target add wasm32-unknown-unknown --toolchain nightly]
+[rustup show]
+[rustup +nightly show]
+
+
 Coding our first blockchain ⛓
 🧑‍💻 Compiling the Substrate framework using Cargo
+
+[cd substrate-node-template]
 
 Default structure of the Substrate framework
 Node folder 📁
@@ -22,7 +50,7 @@ It is an algorithm that sets a certain set of rules and regulations for the part
 The Blockchain Trilemma ⛓
 There is a rule of thumb blockchain system design termed by Vitalik Buterin called the blockchain trilemma. It refers to a widely held belief that decentralized networks can only provide two or three benefits at any given time with respect to decentralization, security, and scalability. So when you achieve one of the benefits, you have to let go off the other two!I know that's a lot of theory but I imagined it would be fun to learn about important concepts while we are building the blockchain.
 
-cargo bluid --release
+[cargo bluid --release]
 
 Distributed computing 🖥
 It is a concept of running the nodes of a network on different computers or systems with computational power, thus distributing the computer power needed among the participants of the network. There are different types of distributed computing and blockchain uses a peer-to-peer model or p2p.These participants of the network interact with each other based on a set of rules called consensus which makes sure that,
