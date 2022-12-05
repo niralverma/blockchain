@@ -80,3 +80,40 @@ This summarizes the whole transaction cycle of a blockchain. It is one of the mo
 
 What is the relay chain in Polkadot? 🔗
 Polkadot is a relay chain, that is, a central chain which creates a multichain architecture for other chains to communicate.Parachains, on the other hand, are specialized chains that connect to the relay chain in a shared security architecture - or in layman terms, a shared consensus.In short. a relay chain is the cpu and parachains are the cores. Each core has their own computational power and they come together to form a multicore system. That summarizes the whole Polkadot Layer-0 architecture.
+
+
+⛓️ Running a Substrate node locally
+Let’s open the terminal in the root folder of the substrate node template and run the following command which will trigger our blockchain’s CLI and execute the node 👇🏼
+[./target/release/node-template --dev]
+
+In this case release is the production version of our blockchain and node-template is the name of the file which helps us to interact with our blockchain, created as a result of the compilation.--dev is the CLI flag we are passing to our blockchain. This flag is defined in the CLI config and is associated with a chain spec config so whenever you run --dev, a particular chain setting is loaded into the runtime logic
+
+Now, what about we make a frontend or a blockchain explorer to see the stats of your blockchain node?
+I hear you guyssssss, let’s boot up a frontend then!
+
+👋🏼 Also, just a reminder do not close the terminal in which you are running your blockchain node or else the blockchain will stop working
+
+
+Making a frontend for our blockchain 🖥
+📜 Using Yarn, NodeJS and React to make a Frontend
+In this lesson, again, we don’t need to do anything from scratch as we have a Substrate frontend template (yayyyy) 
+Or clone the front-end template by running the following command 👇🏼
+
+[git clone https://github.com/substrate-developer-hub/substrate-front-end-template]
+
+Download and install the NodeJS, run following commands to install NodeJS 👇🏼
+
+[curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh]
+[sudo bash /tmp/nodesource_setup.sh]
+[sudo apt install nodejs]
+[node -v]
+
+[sudo npm install --global yarn]
+
+[cd substrate-front-end-template]
+
+[yarn install]
+
+[yarn start]
+
+Congratulations, you have successfully launched your own blockchain with a frontend. Yep, that's it - that's all. 🥳
